@@ -15,6 +15,6 @@ jobs:
           key: v1/${{ runner.os }}/java-8/${{ hashFiles('**/package-lock.json') }}
           restore-keys: v1/${{ runner.os }}/java-8/
       - run: make install
-      - run: make test
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      - run: export PERCY_TOKEN=85cf7af9c352eac74225f75d00280d709f4890aa6651586e55b710bb5e3fe6e4
+      - run: make test 
+       
